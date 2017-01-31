@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>learntree</title>
+<meta charset="iso-8859-1">
+<link rel="stylesheet" href="styles/layout.css" type="text/css">
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/indexpage.js"></script>
+<script src="js/look.js"></script>
+</head>
+<body ng-app="myApp">
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="#">Learntree</a></h1>
+      <h2>learn from Video tutorials</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Trending</a></li>
+        <li class="last"><a href="#">Subscriptions</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <!-- content body -->
+    <section id="slider"><a href="#"><img src="images/demo/hom1.jpg" alt=""></a></section>
+    <!-- main content -->
+    <div id="content">
+      <!-- section 2 -->
+      <section>
+        <!-- article 1 -->
+        <article>
+          <h1>&lt;h1&gt; to &lt;h6&gt; - </h1>
+          <p>Modern training needs to be easy and accessible. A learning management system (LMS) allows you to create, distribute and track training anywhere,?on any device..</p>
+        </article>
+        <!-- / articles -->
+      </section>
+      <!-- section 2 -->
+      <section id="latest" class="last">
+       <h2 class="title">Most Viewed Courses</h2>
+        <ul ng-controller="articleController">
+          <li ng-repeat="x in articles | orderBy:'views':true">
+            <article class="clear">
+              <figure><img ng-src="{{x.myimg}}" alt="">
+                <figcaption>
+                  <h2>{{x.title}}</h2>
+                  <p>{{x.description}}</p>
+                  <footer class="more"><a href="#">Read More</a></footer>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+        </ul>
+       
+      </section>
+    </div>
+    <!-- right column -->
+    <aside id="right_column">
+      <h2 class="title">Trending Categories</h2>
+      <nav>
+        <ul ng-controller="CategoriesController">
+			<li ng-repeat="x in Categories | orderBy:'Clicks':true "><a href="#">{{x.Category}}</a></li>
+        </ul>
+      </nav>
+      <!-- /nav -->
+      <h2 class="title">Get In Contact</h2>
+      <section class="last">
+        <address>
+        Full Name<br>
+        Address Line 1<br>
+        Address Line 2<br>
+        Town/City<br>
+        Postcode/Zip<br>
+        <br>
+        Tel: xxxx xxxx xxxxxx<br>
+        Email: <a href="#">contact@domain.com</a>
+        </address>
+      </section>
+      <!-- /section -->
+    </aside>
+    <!-- / content body -->
+  </div>
+</div>
+<!-- Footer -->
+<div class="wrapper row3">
+  <div id="footer" class="clear">
+    <!-- Section One -->
+    <section class="one_quarter">
+      <h2 class="title">Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Section Two -->
+    <section class="one_quarter">
+      <h2 class="title">Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Section Three -->
+    <section class="one_quarter">
+      <h2 class="title">Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- Section Four -->
+    <section class="one_quarter lastbox">
+      <h2 class="title">Link Block</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li><a href="#">Amet consectetur</a></li>
+          <li><a href="#">Praesent vel sem id</a></li>
+          <li><a href="#">Curabitur hendrerit est</a></li>
+          <li class="last"><a href="#">Sed a nulla urna</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!-- / Section -->
+  </div>
+</div>
+<!-- Copyright -->
+<div class="wrapper row4">
+  <footer id="copyright" class="clear">
+	  <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">Domain Name</a></p>
+  </footer>
+</div>
+</body>
+</html>
